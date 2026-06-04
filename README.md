@@ -55,7 +55,7 @@ python train_random.py
 | フォルダ | 内容 |
 |---|---|
 | `latent_sekitori_target/` | 追跡数字（`TRACK_DIGIT`）の固定サンプルから生成した N 個の z を、席取り割り当て結果で色分けして PCA 可視化 |
-| `latent_sekitori_mse/` | 同じ z を最近傍教師（最小 MSE）で色分けして PCA 可視化 |
+| `latent_sekitori_mse/` | **【重要】** 同じ z を最近傍教師（最小 MSE）で色分けして PCA 可視化 |
 | `latent_all_digits/` | 全 10 数字の μ と z サンプルを PCA で2次元に落として可視化 |
 | `sekitori_teachers/` | 追跡数字の入力画像と使用された教師3枚を横並びで表示 |
 | `digit_variations_5/` | 数字 5 の固定教師画像を encode し、同じ μ/logvar から 10 パターン生成して比較 |
