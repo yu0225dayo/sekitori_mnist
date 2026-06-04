@@ -55,15 +55,27 @@ Total Loss = SekitoriMSE + β × KLD
 pip install torch torchvision tensorboard numpy matplotlib
 ```
 
+## 学習スクリプトについて
+
+### train_fixed.py（固定教師版）✅ 動作確認済み
+
+各数字に対して**1枚の教師画像を固定**して学習します。バッチをまたいでも教師が変わらないため、席取り割り当てが安定し、潜在空間がマルチモーダルな構造を正しく学習します。
+
+```bash
+python train_fixed.py
+```
+
+### train_random.py（ランダム教師版）❌ 未解決
+
+バッチごとに教師画像を**ランダムサンプリング**する実装です。教師がバッチごとに変わるため席取り割り当てが安定せず、現状では**うまく機能しません**。
+
+```bash
+python train_random.py
+```
+
 ## 実行方法
 
 ```bash
-# ランダム教師版（バッチごとに教師画像をランダムサンプリング）
-python train_random.py
-
-# 固定教師版（数字ごとに1枚固定）
-python train_fixed.py
-
 # TensorBoard で学習曲線を確認
 tensorboard --logdir runs
 ```
